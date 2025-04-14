@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<students>
+                                    
+    
+    
+    
+    
+    
+    
+    
+    <student id="24">
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <name>Nguyen tan loi</name>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <maSV>24ite060</maSV>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <lop>24ite</lop>
+                                                                    
+    
+    
+    
+    
+    
+    
+    
+    </student>
+                                
+    
+    
+    
+    
+            
+
+
+
+
+    
+    
+    <student id="45">
+                        
+        
+        <name>tan loi</name>
+                        
+        
+        <maSV>24it5</maSV>
+                        
+        
+        <lop>24ite</lop>
+                    
+    
+    </student>
+        
+
+</students>
