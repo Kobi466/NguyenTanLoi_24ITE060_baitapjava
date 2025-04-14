@@ -9,9 +9,11 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
+
     public View() {
         this.initComponents();
     }
+
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -39,7 +41,15 @@ public class View extends javax.swing.JFrame {
         });
 
         jButton2.setText("RSA");
-
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    ControllerRSA();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         jLabel2.setText("...");
 
         jLabel3.setText("Ma Hoa");
@@ -62,13 +72,12 @@ public class View extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addGap(18, 18, 18))
+                                                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE).addGap(18, 18, 18))
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addGap(13, 13, 13)))
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                                 .addGroup(layout.createSequentialGroup()
                                                                         .addComponent(jButton1)
@@ -98,9 +107,9 @@ public class View extends javax.swing.JFrame {
                                         .addComponent(jLabel5))
                                 .addContainerGap(12, Short.MAX_VALUE))
         );
-
         pack();
     }
+
     public void ControllerAES() throws Exception {
         AESEncryptor encryptor = new AESEncryptor();
         String duLieu = jTextField1.getText();
@@ -109,6 +118,15 @@ public class View extends javax.swing.JFrame {
         String decrypted = encryptor.decrypt(encrypted);
         jLabel5.setText(decrypted);
     }
+    public void ControllerRSA() throws Exception {
+        RSAEncryptor encryptor = new RSAEncryptor();
+        String duLieu = jTextField1.getText();
+        String encrypted = encryptor.encrypt(duLieu);
+        jLabel2.setText(encrypted);
+        String decrypted = encryptor.decrypt(encrypted);
+        jLabel5.setText(decrypted);
+    }
+
     public static void main(String[] args) {
         new View().setVisible(true);
     }

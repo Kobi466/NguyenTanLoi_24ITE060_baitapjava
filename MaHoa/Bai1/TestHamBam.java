@@ -7,6 +7,7 @@ public class TestHamBam {
         String password = "2006";
         System.out.println(hashPassword(password));
     }
+
     private static String hashPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");

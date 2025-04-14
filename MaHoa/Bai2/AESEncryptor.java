@@ -55,4 +55,3 @@ public class AESEncryptor implements Encryptable {
         return new String(decrypted);
     }
 }
-

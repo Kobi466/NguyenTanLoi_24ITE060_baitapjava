@@ -10,10 +10,12 @@ public class DangNhap extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
+
     public DangNhap() {
         this.initComponents();
         this.setVisible(true);
     }
+
     private void initComponents() {
 
         bt_dangNhap = new javax.swing.JButton();
@@ -57,8 +59,7 @@ public class DangNhap extends javax.swing.JFrame {
                                                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(bt_dangNhap)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(bt_dangNhap).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                                 .addComponent(jTextField1)
                                                                 .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)))))
                                 .addContainerGap(71, Short.MAX_VALUE))
@@ -83,17 +84,19 @@ public class DangNhap extends javax.swing.JFrame {
 
         pack();
     }
+
     public void ControllerLogin() {
         String user = jTextField1.getText();
         String pass = String.valueOf(jPasswordField1.getPassword());
-        if(user.equals("admin") && hashPassword(pass).equals("6f6a4e56098cfd9af29e3ae549503b370211a4e94421457fe4cfd39a38a1fa08")) {
+        if (user.equals("admin") && hashPassword(pass).equals("6f6a4e56098cfd9af29e3ae549503b370211a4e94421457fe4cfd39a38a1fa08")) {
             JOptionPane.showMessageDialog(rootPane, "Login Success");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Login Failed");
         }
         jTextField1.setText("");
         jPasswordField1.setText("");
     }
+
     private String hashPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -110,7 +113,6 @@ public class DangNhap extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
-        DangNhap dangNhap = new DangNhap();
-        dangNhap.setVisible(true);
+        new DangNhap().setVisible(true);
     }
 }
